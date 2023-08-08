@@ -1,0 +1,30 @@
+@import "./node_modules/@angular/material/theming";
+
+@import "./src/app/navbar/navbar.scss";
+
+@include mat-core();
+
+
+
+$my-primary: mat-palette($mat-grey,100);
+$my-accent: mat-palette($mat-grey,100);
+
+
+$my-theme: mat-light-theme($my-primary,$my-accent);
+$dark-theme: mat-dark-theme($my-primary, $my-accent);
+
+
+@include angular-material-theme($dark-theme);
+
+
+.themeDark{
+    @include angular-material-theme($dark-theme)
+}
+.themeLight{
+@include angular-material-theme($my-theme);
+}
+
+
+
+
+

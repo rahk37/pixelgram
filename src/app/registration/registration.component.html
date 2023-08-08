@@ -1,0 +1,52 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <img class="logo" src="/assets/Logo.svg" alt=""/>
+    </div>
+    <div class="login-form">
+      <form name="form" (ngSubmit)="f.form.valid && register()" data-test-id="form" #f="ngForm">
+        <input class="username-input" data-test-id="username" type="text" name="username" placeholder="Username..."
+          [(ngModel)]="user.username" #username="ngModel" required
+          [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" />
+        <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+          <div *ngIf="username.errors?.['required']">
+            * Username is required
+          </div>
+        </div>
+
+          <input
+            type="password"
+            [type]="changeType ? 'password' : 'text'"
+            class="password-input"
+            data-test-id="password"
+            name="password"
+            placeholder="Password..."
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+            required
+          />
+          <span (click)="changeType = !changeType" class="material-icons">
+            {{ changeType ? 'visibility_off' : 'visibility'}}
+          </span>
+          <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors?.['required']">
+              * Password is required
+            </div>
+          </div>
+
+        <div class="errorMsg alert" *ngIf="errorMessage && f.submitted">
+          * {{ errorMessage }}
+        </div>
+        <div class="button-div">
+          <button class="login-button" type="submit" (keyup)="f.form.valid && register()" data-test-id="submit">
+            Register
+            <div id="loading" *ngIf="loading" class="spinner-border spinner-border-sm" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

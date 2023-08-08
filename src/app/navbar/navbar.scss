@@ -1,0 +1,305 @@
+mat-toolbar.mat-toolbar.navbarDefault.mat-toolbar-single-row {
+
+//color:rgb(255, 255, 255);
+background: #FFFFFF;
+
+
+}
+
+.material-symbols-outlined{
+
+
+    //border: 1.5px solid #262626;
+color:#262626;
+}
+
+mat-sidenav-content.mat-drawer-content.mat-sidenav-content.overflow{
+
+    color:#FFFFFF;
+    background: white;
+    overflow: !important;
+}
+mat-form-field{
+.mat-form-field.search.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder{
+color: #FAFAFA;
+display: none;
+}
+}
+mat-form-field.search{
+    outline: white;
+    display: none;
+    border: transparent;
+  background-color: #FFFFFF;
+  overflow-y: hidden  !important;
+
+}
+
+.mat-dialog-container {
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+    background-color: #FAFAFA !important;
+    color: black !important;
+}
+
+.mat-focus-indicator.mat-menu-item{
+
+background-color: #FFFFFF;
+
+
+}
+
+.mat-button {
+    border: none !important;
+  }
+
+.mat-focus-indicator.mat-menu-trigger.mat-icon-button.mat-button-base{
+
+
+outline-color: transparent !important;
+outline: 0 !important ;
+
+    outline-style: none !important;
+    outline-width: 0px !important;
+
+}
+
+
+button:focus{
+
+
+    outline-color: transparent !important;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing{
+
+color:#FFFFFF;
+
+}
+
+
+// .mat-ripple.mat-menu-ripple{
+
+// background-color: #FFFFFF;
+
+
+
+// }
+// mat-form-field.search.mat-primary.mat-form-field-type-mat-input.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder {
+//     height: 50%;
+//     border: 40px solid #FFFFFF;
+//     color: #FFFFFF;
+//     box-sizing: border-box;
+//     background: #FFFFFF;
+//     height: auto;
+// }
+
+
+.mat-focus-indicator.mat-menu-item{
+
+background: #FFFFFF;
+color:#262626;
+}
+
+.mat-menu-panel.mat-menu-below.mat-elevation-z4.mat-menu-before{
+
+background: #FFFFFF;
+
+
+}
+
+.mat-menu-content{
+
+
+    background:#FFFFFF;
+}
+
+
+form.searchI{
+
+height: fit-content;
+
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+ }
+ mat-form-field {
+    .mat-hint, input, ::placeholder, .mat-form-field-label {
+       color: white;
+    }
+ }
+.mat-form-field.mat-focused.mat-form-field-label {
+    color: #FFFFFF;
+ }
+
+
+
+ .labelIcon{
+
+   margin-top: 22px;
+    margin-bottom: auto;
+
+ }
+ .mat-form-field-appearance-outline .mat-form-field-outline-gap{ //affects the search bar
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+
+
+
+ }
+
+
+ .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+ .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+ .mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color:transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+ }
+
+ .mat-form-field-appearance-outline .mat-form-field-outline-start .mat-form-field-appearance-outline .mat-form-field-outline-end {
+
+
+   
+    border-top-color: #FFFFFF;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: #FFFFFF;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+
+
+ }
+
+ .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex .mat-form-field-outline-thick {
+    .mat-form-field-infix{
+    
+        color:red;
+        border-color: transparent;
+    }
+
+    .mat-toolbar .mat-input-element{
+    
+        color:#FFFFFF;
+        caret-color:white;
+    }
+    
+    
+        padding: .5em 0;
+        border-top: .84375em solid rgba(0, 0, 0, 0)
+    }
+
+ .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex .mat-form-field-outline-thick {
+.mat-form-field-infix{
+
+    color:red;
+    border-color: transparent;
+}
+.mat-form-field-flex ng-tns-c162-2{
+    border-color: transparent;
+}
+.mat-toolbar .mat-input-element{
+
+    color:#FFFFFF;
+    caret-color:white;
+}
+
+
+    padding: .5em 0;
+    border-top: .84375em solid rgba(0, 0, 0, 0)
+}
+
+.mat-form-field-infix ng-tns-c82-0{
+height: 5px;
+background-color: #FFFFFF;
+border: 20px transparent;
+border-radius: 8px;
+height: auto;
+}
+
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+
+color:transparent;
+
+
+}
+
+mat-input-element.mat-form-field-autofill-control.searchI.ng-tns-c82-0.cdk-text-field-autofill-monitored{
+    background: #FFFFFF;
+    height: 50px;
+}
+
+form _ngcontent-ryc-c143 searchI{
+    overflow: initial;
+    height: 50px;
+}
+
+mat-drawer-content _ngcontent-hun-c134 mat-sidenav-content overflow{
+    width: 0;
+    overflow:initial;
+
+}
+
+
+
+
+input.searchInput{
+
+background: #FAFAFA;
+border-radius: 3px;
+border: 1px solid transparent;
+
+}
+
+input.mat-input-element{
+
+    margin-top: 17px !important;
+    border-color: #d3d3d3;
+
+}
+
+.mat-input-element.mat-form-field-autofill-controlsearchInput.cdk-text-field-autofill-monitored
+{
+
+margin-top: -8px !important;
+
+}

@@ -1,0 +1,53 @@
+
+<div class="container">
+    <div class="login-card">
+        <div class="login-header">
+            <img src="/assets/images/create-post-logo.svg" alt="create post logo" />
+        </div>
+        <form name="form" (ngSubmit)="f.form.valid && sendPost()" data-test-id="form" #f="ngForm" class="login-form">
+            <div class="confirm">
+                <div class="button choose-img">
+                    <label>
+                        <span>
+                            Choose Image<input type="file" data-test-id="img" style="display:none;" id="file" multiple
+                                (change)="getFile($any($event.target).files)"
+                                [ngClass]="{ 'is-invalid': f.submitted && postDescription.invalid }" required
+                                name="postImg" #postImg>
+                            <!-- #postImg="ngModel" [(ngModel)]="post.postImg"  -->
+                        </span>
+                    </label>
+                </div>
+                <div class="center">
+                    <span *ngIf="post.postImg" class="material-icons" style="color: rgb(0, 128, 55);">
+                        check_circle
+                    </span>
+                </div>                
+
+                
+
+            </div>
+            <div *ngIf="f.submitted && !(post.postImg)" class="invalid-feedback">
+                <div>
+                    {{errMsg}}
+                </div>
+            </div>
+            <textarea type="text" data-test-id="description" class="input" placeholder="Description...."
+                [(ngModel)]="post.postDescription" name="postDescription" #postDescription="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && postDescription.invalid }" required></textarea>
+            <div *ngIf="f.submitted && postDescription.invalid" class="invalid-feedback">
+                <div *ngIf="postDescription.errors?.['required']">
+                    * Description is required
+                </div>
+            </div>
+
+            <div class="bottom-buttons">
+                <button class="button cancel" [disabled]="loading" routerLink="/post">Cancel</button>
+                <button class="button" [disabled]="loading" type="submit">Create Post
+                    <div id="loading" *ngIf="loading" class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

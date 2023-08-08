@@ -1,0 +1,61 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<mat-sidenav-container class="sidenav-container">
+
+   <mat-sidenav-content class="overflow">
+
+
+    <mat-toolbar  class = "navbarDefault position-fixed" fxLayout="row" fxLayoutAlign="space-around center" fxLayout     >
+      
+      <!-- PIXELGRAM LOGO -->
+
+      <mat-nav-list>
+      <span class="logo" (click)="logoClicked()" fxLayoutAlign="center center"><img  src="../assets/Group 5.png" alt=""/></span>
+     </mat-nav-list>
+
+      <!-- SEARCH BAR-->
+     <app-searchbar [checkRouteSearch]="checkRouteSearch"></app-searchbar>
+     
+
+        <!-- ADD POST BUTTON -->
+       <mat-nav-list>
+        <div fxLayoutAlign="center center">
+          <button [style.visibility]="!checkRouteAddPost ? 'visible' : 'hidden'"  mat-icon-button [matMenuTriggerFor]="menucreatepost" aria-label="Example icon-button with a menu">
+          <span  *ngIf="isLoggedIn()" class="material-symbols-outlined">
+            add_box
+            </span>
+          </button>
+
+          <!-- LOGIN BUTTON -->
+          <button class="profile-icon-button" [style.visibility]="!checkRouteLoginIcon ? 'visible' : 'hidden'" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <span  class="material-symbols-outlined">
+              person_outline
+              </span>
+          </button>
+
+          <!-- ADD POST DROPDOWN OPTIONS -->
+          <mat-menu  #menucreatepost="matMenu">
+            <button routerLink="/create-post"  mat-menu-item >
+
+              <span>Add New Post</span>
+            </button>
+          </mat-menu>
+
+          <mat-menu  #menu="matMenu">
+
+          <!-- LOGIN DROPDOWN OPTIONS -->
+          <button class="login-button" mat-menu-item (click)="logButtonClicked()">
+
+              <span>{{getLoginText()}}</span>
+            </button>
+          </mat-menu>
+
+        </div>
+      </mat-nav-list>
+    </mat-toolbar>
+    <!-- LOADING BAR -->
+    <div *ngIf="loading" class="show-progress">
+      <mat-progress-bar class="indeterminate"  mode="indeterminate"></mat-progress-bar>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

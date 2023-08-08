@@ -1,0 +1,10 @@
+<div class="dropdown">
+<mat-nav-list [style.visibility]="!checkRouteSearch ? 'visible' : 'hidden'">
+    <form fxLayoutAlign="center center" class = "searchI" >
+      <mat-form-field fxLayoutAlign="center center"class = "search"  appearance="outline">
+        <mat-label class ="labelIcon" fxLayoutAlign="center center"><mat-icon><mat-placeholder class="placeholder"><mat-icon>search</mat-icon></mat-placeholder></mat-icon>Search</mat-label>
+        <input [(ngModel)]="mainPageSearchInput" (ngModelChange)="mainPageSearchInput = $event" name="input" value="input" (ngModelChange)="searchPostDescriptions($event)" fxLayoutAlign="center center" class = "searchInput" matInput >
+      </mat-form-field>
+    </form> 
+    </mat-nav-list>
+</div>

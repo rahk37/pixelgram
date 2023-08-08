@@ -1,0 +1,121 @@
+.login-card {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 5rem;
+    background: #FFFFFF;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.container {
+    margin:auto;
+    /* margin-left: 1rem;
+    margin-right: 1rem; */
+    min-width: 311px;
+    
+}
+
+.login-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.input {
+    height: 139px;
+    width: 100%;
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    text-indent: 15px;
+    margin-top: 2.5rem;
+    resize: none;
+    padding-top: 12px;
+    /*,-- get rid of grabby thing in bottom right of textarea*/
+}
+
+.cancel {
+    background-color: #5751E9 !important;
+    margin-right: 1rem;
+}
+
+.input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #E6E6E6;
+    font-size: 15px;
+
+}
+
+.choose-img {
+    width: 159px !important;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    align-items: flex-end;
+}
+
+.bottom-buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.login-form {
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.button {
+    background: #5197E9;
+    border-radius: 3px;
+    border: #5197E9;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 100%;
+    letter-spacing: 0.025em;
+    color: #FFFEFE;
+    width: 169px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.errorMsg {
+    margin-top: 2rem;
+    color: #CB5B5B;
+}
+
+.invalid-feedback {
+    position: absolute;
+    color: #CB5B5B;
+    margin-top: .5rem;
+}
+
+#loading {
+    margin-left: 7px;
+    margin-top: 2px;
+    position: absolute;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: 1rem !important;
+}

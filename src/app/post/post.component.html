@@ -1,0 +1,253 @@
+<div
+  id="scroll"
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+
+>
+  <div
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+    *ngFor="let post of postsArr"
+    [style.padding-bottom]="(filter.length > 0) ? '100px' : '35px'"
+  >
+    <mat-card
+      class="postSize center"
+      style="top: 100px; bottom: -20px; padding-bottom: 25px;"
+    >
+
+    
+      <mat-card-header
+        fxLayoutAlign="space-between center"
+        fxLayoutAlign.lt-md="end stretch"
+        fxLayoutAlign.lt-sm="end stretch"
+        fxLayout.lt-sm="row"
+        class="left"
+        style="height: 90px;"
+      >
+        <img
+          *ngIf="post.author.profileImageUrl"
+          id="usernameuserpic"
+          mat-card-avatar
+          src="{{ post.author.profileImageUrl }}"
+          alt=""
+        />
+
+        <img *ngIf="!post.author.profileImageUrl" id="usernameuserpic" class="" mat-card-avatar
+          src="https://www.pinclipart.com/picdir/middle/182-1826527_light-gray-circle-png-clipart.png" alt="" />
+
+        <mat-card-title style="
+            display: inline;
+            top: 0px;
+            position: absolute;
+            left: 50px;
+            padding: 25px;
+            color: black;
+            font-size: 20px;
+          ">{{ post.author.username }}</mat-card-title>
+
+        <!-- Add for Delete posts -->
+
+
+        <div class="edit-btn-dots greyFocus" *ngIf="isLoggedIn()"><button id="postoptions"
+            *ngIf="post.author.username===loggedInUser || isAdminUser===true" mat-icon-button [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu">
+            <span class="material-symbols-outlined">
+              more_horiz
+            </span>
+          </button>
+        </div>
+
+        <mat-menu class="edt-delete-button" #menu="matMenu">
+          <button mat-menu-item (click)="
+              post.editMode = !post.editMode;
+              pendingEditPostDescription = post.message
+            ">
+            <span>Edit Post</span>
+          </button>
+          <button mat-menu-item (click)="delete(post)">
+            <span>Delete Post</span>
+          </button>
+        </mat-menu>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="backgroundBlack" style="width: 614px; height: 614px">
+          <img *ngIf="post.imageUrl" mat-card-image src="{{ post.imageUrl }}" alt=""
+            style="width: 614px; height: 614px; object-fit: contain" />
+          <img *ngIf="!post.imageUrl" mat-card-image
+            src="https://htmlcolorcodes.com/assets/images/colors/gray-color-solid-background-1920x1080.png" alt="" />
+        </div>
+        <div class="below-image">
+          <div class="likeComments" fxLayoutAlign="start center">
+            <span class="material-icons heart" *ngIf="!post.hasLiked && isLoggedIn()" (click)="likeDislike(post)"
+              style="color: black">
+              favorite_border
+            </span>
+            <span class="material-icons heart" *ngIf="post.hasLiked && isLoggedIn()" (click)="likeDislike(post)"
+              style="color: red">
+              favorite
+            </span>
+            <span>
+              <p class="likesPosition" style="color: #ababab; font-size: 20px">
+                {{ post.likeCount }} likes &nbsp;
+                {{ post.comments.totalElements }} comments
+              </p>
+            </span>
+          </div>
+
+          <div name="description" *ngIf="!post.editMode" id="description" style="padding-left: 7px; text-indent: -7px">
+            <strong class="username-desc" style="font-size: 20px;">{{ post.author.username }}</strong>
+
+            <p
+              *ngIf="post.message.length > 50 && !post.showMore"
+              (click)="post.showMore = !post.showMore"
+              class="post-message"
+            >
+              <span *ngFor="let myString of splitFunction(post.message.slice(0, 49))" class="comment-message" style="margin-left: 3px">
+                <span class = "word" [ngSwitch]="checkStartingChar(myString)">
+                  <span *ngSwitchCase="'@'" class="blueMsg" (click)="navigateToProfile(myString)">{{myString}}</span>
+                  <span *ngSwitchCase="'#'" class="blueMsg">{{myString}}</span>
+                  <span *ngSwitchDefault="">{{myString}}</span>
+                </span>
+              </span>
+              
+            </p>
+            <em *ngIf="post.message.length > 100 && !post.showMore" (click)="post.showMore = !post.showMore"
+              style="color: #ababab; cursor: pointer">...more</em>
+
+            <p
+              *ngIf="post.message.length <= 50 || post.showMore"
+              class="post-message"
+            >
+              <span *ngFor="let myString of splitFunction(post.message)" class="comment-message" style="margin-left: 3px">
+                <span class = "word" [ngSwitch]="checkStartingChar(myString)">
+                  <span *ngSwitchCase="'@'" class="blueMsg" (click)="navigateToProfile(myString)">{{myString}}</span>
+                  <span *ngSwitchCase="'#'" class="blueMsg" (click)="navigateToHashtag(myString)">{{myString}}</span>
+                  <span *ngSwitchDefault="">{{myString}}</span>
+                </span>
+              </span>
+            </p>
+            <em *ngIf="post.showMore" (click)="post.showMore = !post.showMore"
+              style="color: #ababab; cursor: pointer">...show less</em>
+          </div>
+
+          <div *ngIf="post.editMode">
+            <strong style="color: black">{{ post.author.username }}</strong>
+
+            <div class="edit-div">
+              <textarea cdkTextareaAutosize class="edit-textbox" [(ngModel)]="pendingEditPostDescription"
+                rows="2"></textarea>
+              <button class="buttonClick" (click)="editPost(post); post.editMode = !post.editMode">
+                <svg class="arrow" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976315 7.29289 0.292892L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 25L9 1H7L7 25H9Z"
+                    fill="white" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="view-more" name="CommentsDisplay" *ngIf="post.comments.content[0]">
+            <div (click)="showComments(post)">
+              <p *ngIf="
+                  post.comments.numDisplayCom < post.comments.totalElements
+                " class="ViewComments">
+                View more comments
+              </p>
+
+              <p *ngIf="
+                  post.comments.numDisplayCom >= post.comments.totalElements
+                " class="ViewAllComments">
+                Viewing all comments
+              </p>
+            </div>
+
+            <div *ngFor="let commentInfo of post.comments.content">
+              <div class="textcolor">
+                <strong class="comment-user">{{
+                  commentInfo.author.username
+                }}</strong>
+                <p  class="comment-message-wrapper">    
+                  <span *ngFor="let myString of splitFunction(commentInfo.message)" class="comment-message" style="margin-left: 3px">
+                    <span class = "word" [ngSwitch]="checkStartingChar(myString)">
+                      <span *ngSwitchCase="'@'" class="blueMsg" (click)="navigateToProfile(myString)">{{myString}}</span>
+                      <span *ngSwitchCase="'#'" class="blueMsg" (click)="navigateToHashtag(myString)">{{myString}}</span>
+                      <span *ngSwitchDefault="">{{myString}}</span>
+                    </span>
+                  </span>
+                </p>
+
+                <button class="edit-icon" *ngIf="commentInfo.author.username === loggedInUser && isLoggedIn()"
+                  (click)="commentInfo.editMode = !commentInfo.editMode; pendingEditComment = commentInfo.message">
+                  <img class="edit-icon" src="/assets/images/edit.png" title="edit icons" alt="edit">
+                </button>
+
+
+                <div class="edit-div" *ngIf="commentInfo.editMode">
+                  <textarea cdkTextareaAutosize class="edit-textbox" [(ngModel)]="pendingEditComment"
+                    rows="2"></textarea>
+                  <button class="buttonClick" (click)="
+                      editComment(commentInfo);
+                      commentInfo.editMode = !commentInfo.editMode">
+                    <svg class="arrow" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976315 7.29289 0.292892L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 25L9 1H7L7 25H9Z"
+                        fill="white" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+
+      <div class="comment-div" *ngIf="isLoggedIn() && post.AddCommentOn">
+        <input
+          class="comment-textbox"
+          type="text"
+          placeholder="Add a comment..."
+          [(ngModel)]="post.comments.message"
+        />
+        <button
+          class="buttonClick"
+          (click)="postCommentService(post.comments.message, post.id, post)"
+        >
+          <svg
+            class="arrow"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976315 7.29289 0.292892L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 25L9 1H7L7 25H9Z"
+              fill="white" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="comment-div" *ngIf="isLoggedIn()" (click)="toggleComment(post)">
+        <span *ngIf="!post.AddCommentOn" style="color: gray">
+          Add a comment</span>
+        <span *ngIf="post.AddCommentOn" style="color: gray">
+          Cancel comment</span>
+      </div>
+
+
+      <div style="padding-bottom:  10px;"></div>
+    </mat-card>
+
+
+  </div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</div>

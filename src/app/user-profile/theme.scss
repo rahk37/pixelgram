@@ -1,0 +1,606 @@
+.mat-card {
+    background: #FFFF !important;
+    color:black;
+}
+
+
+
+mat-card-title {
+    color:black;
+}
+
+mat-ink-bar{
+
+    bottom: auto !important;
+    top: 0 !important;
+
+}
+
+mat-card-subtitle {
+    color:black !important;
+}
+
+
+
+.mat-tabs-border{
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+
+}    
+
+.example-image-div{
+
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    // display:  block !important;
+    // margin-left: auto;
+    // margin-right: auto;
+
+}
+
+.profileHeader{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    position: relative;
+
+
+
+    
+}
+
+.image-inside-div{
+
+    background-color: rgb(250, 250, 250);
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.section{
+
+    align-items: stretch;
+    border: 0;
+    box-sizing: border-box;
+    color: rgb(38, 38, 38);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+
+
+}
+
+.usernameProfile{
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+
+
+
+
+}
+
+
+.HeaderUserName{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color:rgb(38, 38, 38)!important;
+    font-weight: 300 !important;
+    font-size: 28px !important ;
+    line-height: 32px !important;
+    margin: -5px 0 -6px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    }
+
+
+
+.gear{
+
+    flex-direction: row;
+    flex-shrink: 0;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+height: 40px;
+width: 40px;
+}
+
+.svg-gear{
+
+    display: block;
+    position: relative;
+    color: rgb(38, 38, 38);
+    fill: rgb(38, 38, 38);
+    height: 24px !important;
+    width: 24px !important;
+
+}
+
+.ButtonClass{
+
+    margin-left: calc((4px) * 5);
+  flex:  0 1 auto;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+ 
+  box-sizing: border-box;
+  position: relative; 
+  display: flex;
+  align-items: stretch;
+  min-height: 0;
+  min-width: 0;
+
+}
+
+.everything{
+
+    flex-grow: 1;
+    margin: 0 auto 30px;
+    max-width: 935px;
+    margin-top: 65px;
+
+
+}
+
+@media only screen and (min-width: 736px) {
+
+
+
+.everything{
+
+
+padding: 30px 20px 0;
+
+box-sizing: content-box;
+
+width: calc(100% - 40px);
+
+}
+
+
+
+.example-image-div{
+
+    flex-basis: 0px;
+    flex-grow: 1;
+    margin-right: 30px;
+
+
+}
+
+
+
+.image-inside-div{
+
+    height: calc(148px + 2px);
+    width: 150px;
+
+
+
+
+}
+
+.profileHeader{
+
+
+margin-bottom: 174px;
+
+
+}
+
+.buffer{
+
+margin-bottom: 20px;
+
+
+}
+
+.section{
+
+    flex-basis: 30px;
+    flex-grow: 2;
+
+
+
+}
+    button.updateProfileHidden {
+        display:none !important;
+        background-color:#FAFAFA!important;
+        color: rgb(38, 38, 38) !important;
+        border: 1px solid rgb(219, 219, 219)!important;
+        width: 100%  !important;
+        border-radius:4px !important;
+        max-width: 250px !important;
+        flex:1 1 auto !important;
+        
+    }
+
+
+    .mat-card-title-user{
+
+        margin-bottom: 28px !important;
+        
+        }
+
+    span.Info {
+        display: contents !important;
+
+        color: rgb(38, 38, 38) !important;
+        font-weight: 600 !important;
+        font-size: 16px !important;
+        // font-weight: 24px !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+       
+        margin-right: 40px !important;
+    }
+
+
+.account-stats{
+display: contents !important;
+
+    margin-bottom: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+
+
+
+}
+
+.account-li:first-child{
+
+margin-left: 0;
+
+}
+.account-li{
+
+    font-size: 16px;
+    margin-right: 40px;
+
+    display: list-item;
+    text-align: -webkit-match-parent;
+
+
+}
+
+.account-div{
+    display: block;
+    color: rgb(142, 142, 142) !important;
+    font-weight: 400px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+    div.breakPointAccountInfo { 
+        display: none !important;
+    }
+
+
+    button.updateProfileNonHidden {
+        background-color:transparent !important;
+        color: rgb(38, 38, 38) !important;
+        border: 1px solid rgb(219, 219, 219)!important;
+        // width: auto;
+        border-radius:4px !important;
+        position: relative !important;
+        // padding: 5px 9px !important;
+        // width:auto !important;
+    }
+
+    img.example-image {
+        width: 150px;
+        height:150px;
+    }
+
+
+}
+
+
+
+.profileCard {
+    box-shadow: none !important;
+}
+
+
+
+@media only screen and (max-width: 736px) {
+
+
+
+    .usernameProfile{
+
+margin-bottom: 12px;
+
+
+    }
+
+.example-image-div{
+
+    justify-content: center;
+    margin-right: 28px;
+
+
+}
+
+.image-inside-div{
+
+    height: calc(.5 * 150px + 2px);
+    width: 77px;
+
+
+
+}
+
+
+
+    .profileHeader{
+
+
+        margin-bottom: 88px;
+        margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+        
+        }
+        
+
+.account-stats{
+display: none;
+
+
+}
+
+
+    button.updateProfileNonHidden {
+        display: none !important;
+        background-color:#FAFAFA!important;
+        color: rgb(38, 38, 38) !important;
+        border: 1px solid rgb(219, 219, 219)!important;
+        width: auto;
+        border-radius:4px !important;
+    }
+
+    img.example-image {
+        width: 77px;
+        height:77px;
+    }
+
+
+
+.width{
+
+    max-width: 250px;
+
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+
+.width_{
+
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
+    justify-content: flex-start;
+
+    flex-direction: row;
+
+    align-items: center;
+    align-content: stretch;
+
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+    button.updateProfileHidden {
+        background-color:#FAFAFA!important;
+        color: rgb(38, 38, 38) !important;
+        border: 1px solid rgb(219, 219, 219)!important;
+        width: 100% !important;
+        border-radius:4px !important;
+        max-width: 250px !important;
+        flex: 1 1 auto !important;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    justify-content:flex-start !important;
+    align-items: stretch !important;
+    align-content: stretch !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+
+    }
+
+
+.mat-card-title-user{
+
+margin-bottom: 24px !important;
+
+}
+
+    div.breakPointAccountInfo {
+      //  display: contents !important;
+        border-top:1px solid rgb(219, 219, 219);
+        border-bottom:1px solid rgb(219, 219, 219);
+    text-align: center !important;
+
+
+    color: rgb(142, 142, 142) !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    // font-weight: 24px !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+   padding-top: 12px;
+   padding-bottom: 12px;
+
+
+
+
+    // height: 48px;
+    // padding: 0 24px;
+    // cursor: pointer;
+    // box-sizing: border-box;
+    // opacity: .6;
+    // min-width: 160px;
+    
+    // display: inline-flex;
+    // justify-content: center;
+    // align-items: center;
+    // white-space: nowrap;
+    // position: relative;
+
+
+
+    }
+
+
+    .Info2{
+        font-weight: 600 !important;
+
+color: rgb(38, 38, 38) !important;
+    }
+    
+    span.Info {
+        display: none !important;
+    }
+
+}
+
+
+
+
+
+.mat-tab-label {
+    color: black !important;
+    min-width: 100px;
+}
+
+.icon {
+    font-size: 15px;
+}
+
+mat-tab-group {
+    width: 100%;
+    margin: auto;
+    padding: 0 0 50px 0;
+}
+
+.backgroundBlack {
+    background-color: black;
+    width: 100%;
+    height: 350px;
+  }
+
+.post {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+svg {
+    width: 12px;
+    height: 12px;
+}
+
+#camera {
+    padding: 0 0 20px 0;
+}
+
+
+
+.no-posts {
+    margin: 50px 0 0;
+    text-align: center;
+    justify-content: center;
+}
+  
+@media only screen and (max-width: 735px) {
+
+    .gear{
+
+margin-left: 0;
+
+
+
+    }
+
+
+
+    .mat-tab-label {
+        width: 100%;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+@media only screen and (min-width: 925px) {
+
+    mat-tab-group {
+        width: 925px;
+        margin: auto;
+    }
+
+}
+
+mat-tab {
+    background-color: black !important;
+    color: black !important;
+}
+
+
+
+

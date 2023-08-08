@@ -1,0 +1,36 @@
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <img class="logo" src="assets/images/Pixelgram Logo.svg" alt="">
+            <div class="rectangle"></div>
+            <h1 class="title">Login</h1>
+        </div>
+        <div class="login-form">
+            <input [(ngModel)]="user.username" class="username-input" placeholder="Username...">
+            <div class="username-error-div"
+                [ngClass]="{
+                    'username-error-req': isUsernameError,
+                    'username-no-error': !isUsernameError
+                }"><p *ngIf="isUsernameError" class="username-error">* Username is required</p></div>
+            <input [(ngModel)]="user.password" (keyup)="handleKeyUp($event)" type="password" class="password-input" [type]="changeType ? 'password' : 'text'" placeholder="Password...">
+            <em (click)="changeType = !changeType" class="material-icons">
+                {{ changeType ? 'visibility_off' : 'visibility'}}
+            </em>
+            <div class="password-error-div"
+                [ngClass]="{
+                    'password-error-req': isSecondError(),
+                    'password-no-error': !isSecondError()
+                }"><p *ngIf="isPasswordError" class="password-error">* Password is required</p>
+                <p *ngIf="isIncorrect" class="username-password-error">* Username or password incorrect</p>
+            </div>
+            <div class="button-div">
+                <a routerLink="/register" class="reg-link">Register</a>
+                <button type="submit" [disabled]="loading" (click)="loginUser()" class="login-button" id="login-butt">Login
+                    <div id="loading" *ngIf="loading" class="spinner-border spinner-border-sm" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

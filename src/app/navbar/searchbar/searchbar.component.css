@@ -1,0 +1,85 @@
+.sidenav-container {
+    height: 100%;
+}
+  
+.sidenav {
+  width: 150px;
+}
+  
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logo-button{
+  cursor: pointer;
+}
+
+.example-form {
+  max-width: 500px;
+  width: auto;
+}
+
+.example-full-width {
+  width: auto;
+}
+
+.search:hover {
+  border-color: transparent;
+}
+
+.search:before {
+  border-color: transparent;
+}
+
+.search:after {
+  border-color: transparent;
+}
+
+.search:active {
+  border-color: transparent;
+}
+
+.search{
+  box-sizing: border-box;
+  background: transparent !important;
+  border-color: transparent !important;
+  padding-bottom: 0;
+}
+
+.searchI{ 
+  border-radius: 10px;
+  box-sizing: border-box;
+  color:  rgba(153, 153, 153, 1); 
+  height:50%;
+  text-align:center; 
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+  border-color: transparent;
+}
+
+.searchInput {
+  color: black;
+  padding-left: 5px;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.indeterminate {
+  position: absolute;
+  bottom: 40px;
+  margin-top: 0px;
+  width: 100% !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled, ::ng-deep .mat-form-field-outline {
+  opacity: 0;
+}

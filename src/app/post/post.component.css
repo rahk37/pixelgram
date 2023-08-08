@@ -1,0 +1,363 @@
+:root {
+  --w: 614px;
+  --h: 614px;
+}
+
+.likes {
+  vertical-align: top;
+  text-align: left;
+  max-width: 5%;
+  border-radius: 50%;
+}
+
+.greyfocus :hover {
+  background-color: gray !important;
+  margin-right: 15px;
+}
+
+.greyfocus {
+  background-color: gray;
+}
+
+.backgroundBlack {
+  background-color: black;
+}
+
+.edit-delete-button {
+  background-color: white;
+}
+.postSize {
+  width: var(--w);
+  padding: 0px !important;
+  background: white;
+  max-height: auto;
+  word-wrap: break-word;
+}
+
+img {
+  left: 0px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ViewComments:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ViewComments,
+.ViewAllComments {
+  color: #ababab;
+  margin-left: 8px;
+}
+
+.heart:hover {
+  cursor: pointer;
+}
+
+.heart {
+  font-size: 35px;
+}
+
+.mat-card {
+  width: 100;
+}
+
+.center {
+  margin: auto;
+  font-weight: 400;
+}
+
+.post-message {
+  font-weight: 400;
+  text-indent: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+p {
+  display: inline;
+  color: black;
+  font-size: 20px;
+}
+
+b {
+  display: inline;
+  color: black;
+  font-size: 10px;
+}
+
+i {
+  display: inline;
+  color: grey;
+  font-size: 10px;
+}
+
+i:hover {
+  cursor: default;
+  text-decoration: underline;
+}
+
+#postoptions {
+  position: absolute;
+  /* top: 9px; */
+  /* bottom: 9px; */
+  margin: auto;
+  right: 0px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+#postoptions:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+#usernameuserpic {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.likeComments {
+  display: flex;
+  height: 100%;
+  flex-flow: row nowrap;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.likeComments p {
+  height: 100%;
+  color: #ababab;
+  font-size: 10px;
+  margin-left: 4px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.likesPosition {
+  margin-top: 10px;
+}
+
+#description {
+  margin-top: 5px;
+  word-wrap: break-word;
+  width: 590px;
+}
+
+.textcolor,
+.view-more {
+  margin-top: 5px;
+  word-wrap: break-word;
+}
+.textcolor {
+  overflow-wrap: break-word;
+  width: 590px;
+  padding-left: 7px;
+  text-indent: -7px;
+}
+em {
+  font-size: 17.5px;
+}
+
+.comment-user {
+  color: black;
+  letter-spacing: normal;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+.edit-div {
+  display: flex;
+  /* margin-top: -10px; */
+  margin-bottom: 12px;
+  /* margin-left: 5px; */
+}
+
+.edit-div textarea {
+  width: 97%;
+  width: 590px;
+  padding-right: 37px;
+  margin-right: -37px;
+  text-indent: 5px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding-bottom: 4px;
+  word-wrap: break-word;
+  resize: none;
+  overflow: hidden;
+  font-size: 18px;
+  margin-left: -2px;
+}
+
+.edit-div button {
+  height: 33px;
+  width: 33px;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 5px;
+  margin-right: -40px;
+  background-color: green;
+  border: none;
+  border-radius: 3px;
+}
+
+.edit-textbox::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  color: #e6e6e6;
+  font-size: 10px;
+}
+
+.comment-message-wrapper {
+  display: inline;
+  margin-left: 8px;
+}
+.comment-message {
+  color: black;
+  letter-spacing: normal;
+  font-size: 15px;
+  font-weight: 400;
+
+}
+
+/* .comment-message p {
+  padding-left: 8px;
+
+} */
+.username-desc {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.addComment {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+/* .card-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+@media (max-width: 350px) {
+  .mat-card {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.comment-div {
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.comment-div:hover {
+  cursor: pointer;
+}
+
+.comment-descrip-size {
+  font-size: 15px;
+}
+
+.comment-div input {
+  width: 590px;
+  height: 40px;
+  padding-right: 37px;
+  margin-right: -37px;
+  text-indent: 5px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding-bottom: 4px;
+  margin-left: 5px;
+}
+
+.edit-icon {
+  background-color: white;
+  border: none;
+  width: 1.5rem;
+  padding-bottom: 4px;
+}
+
+.comment-div button {
+  height: 33px;
+  width: 33px;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 5px;
+  margin-right: -40px;
+  background-color: #5197e9;
+  border: none;
+  border-radius: 3px;
+}
+
+.comment-div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.below-image {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.comment-textbox::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  color: #e6e6e6;
+  font-size: 18px;
+}
+
+.comment-div span {
+  margin-left: 8px;
+  color: #e6e6e6;
+  font-size: 20px;
+}
+
+.edit-btn-dots {
+  position: relative;
+  /* display: flex; */
+  width: 100px;
+  height: 100%;
+  margin-right: 15px;
+  /* vertical-align: middle; */
+}
+
+.word{
+  font-size: 20px;
+  /* display: inline-block; */
+}
+.blueMsg {
+  color: #00acee !important;
+  font-weight: 500;
+ 
+}
+ .blueMsg:hover {
+  text-decoration: underline;
+  cursor: pointer;
+} 

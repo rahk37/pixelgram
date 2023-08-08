@@ -1,0 +1,136 @@
+.login-card {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 7rem;
+  background: #FFFFFF;
+  border: 1px solid #E6E6E6;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.login-container {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+#loading {
+  margin-left: 5px;
+  margin-top: 2px;
+  position: absolute;
+}
+
+.login-header {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+.rectangle {
+  width: 1px;
+  height: 45px;
+  background-color: #2a2a2a;
+  margin-top: 26px;
+  margin-left: 28px;
+  margin-right: 21px;
+}
+
+.title {
+  font-family: 'Billabong', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 100%;
+  letter-spacing: 0.025em;
+}
+
+.username-input,
+.password-input {
+  height: 57px;
+  width: 100%;
+  background: #FAFAFA;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  text-indent: 15px;
+}
+
+.username-input::placeholder, .password-input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #E6E6E6;
+  font-size: 15px;
+
+}
+
+.username-input {
+  margin-top: 3rem;
+}
+
+.password-input {
+  margin-top: 45px;
+}
+
+.button-div {
+  text-align: end;
+  margin-top: 50px;
+}
+
+.login-form {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.login-button {
+  background: #5197E9;
+  border-radius: 3px;
+  border: #5197E9;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.025em;
+  color: #FFFEFE;
+  width: 118px;
+  height: 45px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.reg-link {
+  margin-right: 35px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #262626;
+  letter-spacing: 0.025em;
+}
+
+.errorMsg {
+  margin-top: 2.5rem;
+  position: absolute;
+  color: #CB5B5B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  padding: 0;
+}
+
+.invalid-feedback {
+  position: absolute;
+  color: #CB5B5B;
+  margin-top: .5rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+
+}
+
+.material-icons {
+  cursor: pointer;
+  margin-left: -35px;
+  vertical-align: middle;
+}
